@@ -74,12 +74,16 @@ int main(){
 				if(IsEmpty(S)){
 					Top(S);
 				}else{
-				cout << "Pop: " << Top(S) << endl;
-				Pop(S);	
+					cout << "Pop: " << Top(S) << endl;
+					Pop(S);	
 				}
 				break;
 			case 3:
-				cout << "Top: " << Top(S) << endl;
+				if(isEmpty(s)){
+					Top(s);
+				}else{
+					cout << "Top : " << Top(s) <<endl;
+				}
 				break;
 			case 4:
 				cout << "Bye!";
