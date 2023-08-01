@@ -23,7 +23,7 @@ int showmenu(){
 void printData(struct record *hnt){
 	struct record *p = hnt;
 	if(hnt == NULL){
-		cout << "Empty List!";
+		cout << "Empty List!" << endl;
 	}else{
 		while (p){
 			cout << p->value << " ";
@@ -38,13 +38,17 @@ struct head_n_tail deleteData(struct record *head,struct record *tail,int data){
 	if(data == head->value){
 		tmpfree = head;
 		head = head->next;
-		head->prev = NULL;
+		if(head){
+			head->prev = NULL;
+		}
 		delete tmpfree;
 		box.head = head;
 	}else if (data == tail->value){
 		tmpfree = tail;
 		tail = tail->prev;
-		tail->next = NULL;
+		if(tail){
+			tail->next = NULL;
+		}
 		delete tmpfree;
 		box.tail = tail;
 	}else{
@@ -83,7 +87,7 @@ struct head_n_tail insert(struct record *head,struct record *tail,int data){
 			head ->prev = node;
 			head = node;
 			box.head=head;
-        		box.tail=tail;
+        	box.tail=tail;
 		}else{
 			p = head;
 			while (p->next != NULL){
@@ -93,7 +97,7 @@ struct head_n_tail insert(struct record *head,struct record *tail,int data){
 				 	node->prev = p;
 				 	p->next = node;
 				 	box.head=head;
-        				box.tail=tail;
+        			box.tail=tail;
 				 	break;
 				 }else{
 				 	p = p->next; 
@@ -105,7 +109,7 @@ struct head_n_tail insert(struct record *head,struct record *tail,int data){
 				p->next = node;
 				tail = node;
 				box.head=head;
-        			box.tail=tail;
+        		box.tail=tail;
 			}
 		}
 	}
