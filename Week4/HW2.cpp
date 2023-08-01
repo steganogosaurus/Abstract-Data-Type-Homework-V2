@@ -83,7 +83,7 @@ struct head_n_tail insert(struct record *head,struct record *tail,int data){
 			head ->prev = node;
 			head = node;
 			box.head=head;
-        	box.tail=tail;
+        		box.tail=tail;
 		}else{
 			p = head;
 			while (p->next != NULL){
@@ -93,7 +93,7 @@ struct head_n_tail insert(struct record *head,struct record *tail,int data){
 				 	node->prev = p;
 				 	p->next = node;
 				 	box.head=head;
-        			box.tail=tail;
+        				box.tail=tail;
 				 	break;
 				 }else{
 				 	p = p->next; 
@@ -105,7 +105,7 @@ struct head_n_tail insert(struct record *head,struct record *tail,int data){
 				p->next = node;
 				tail = node;
 				box.head=head;
-        		box.tail=tail;
+        			box.tail=tail;
 			}
 		}
 	}
