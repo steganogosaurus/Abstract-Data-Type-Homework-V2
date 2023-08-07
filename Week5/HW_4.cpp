@@ -1,3 +1,6 @@
+//Name : Wiritipon Thapkhan
+//ID : 6530300503
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -37,8 +40,7 @@ int checkOperator(char symbol){
 		case '/':
 			return 2;
 			break;
-		case '(':
-			return 0;
+		case '(': return 0; 
 			break;
 	}
 }
@@ -97,35 +99,7 @@ void symbolPostfix(char symbol,Stack S){
 		}
 	}
 }
-void normalPostfix(Stack S){
-	check = false;
-	char data[40];
-	str.clear();
-	cout << "Infix: ";
-	do{
-		cin >> data;
-		if(data[0] == '.'){
-			if(!IsEmpty(S)){
-				while(!IsEmpty(S)){
-					str += Top(S);
-					str += " ";
-					Pop(S);
-				}
-				cout << "Postfix: " << str;
-			}
-			break;
-		}else{
-			if(isdigit(data[0])){
-			    str += data;
-				str += " ";
-        	}else{
-        		symbolPostfix(data[0],S);
-			}
-		}
-	}while(data[0]!='.');
-	cout << endl;
-}
-void advancePostfix(Stack S){
+void Postfix(Stack S){
 	check = false;
 	char data[40];
 	str.clear();
@@ -188,16 +162,15 @@ Stack CreateStack(){
 	}
 	return S;
 }
-
 int main(){
 	while(true){
 		Stack S = CreateStack();
 		switch(showmenu()){
 			case 1:
-				normalPostfix(S);
+				Postfix(S);
 				break;
 			case 2:
-				advancePostfix(S);
+				Postfix(S);
 				break;
 			default:
 				cout << "Please select 1 or 2 !!" << endl;
