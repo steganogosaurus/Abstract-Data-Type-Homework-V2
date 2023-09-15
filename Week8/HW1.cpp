@@ -54,7 +54,5 @@ int main(){
 		end = box.end;
 	}
 	printList(head);
-
-	
 	return 0;
 }
