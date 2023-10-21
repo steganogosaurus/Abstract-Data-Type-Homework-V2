@@ -104,7 +104,13 @@ void LinearProbling(int tablesize){
 				break;
 			}
 		}
+		//short if
 		(arrLinearstu[index] == NULL)? (arrLinearstu[index] = new struct LinearProbling , arrLinearstu[index]->data = stu) : '\0'; //add data to index
+		/* if ธรรมดา
+  		if (arrLinearstu[index] == NULL){
+    			arrLinearstu[index] = new struct LinearProbling;
+       			arrLinearstu[index]->data = stu);
+    		*/
 	}
 	cout << "Index id"<<endl <<endl;
 	for(int i = 0 ;i < tablesize;i++){
